@@ -1,0 +1,109 @@
+nav{
+    align-items: center !important;
+}
+li .fa-house, .fa-facebook-messenger, .fa-square-plus, .fa-compass, .fa-gratipay{
+    font-size: 20px !important;
+}
+#navInp{
+    height: 35px;
+    width: 40%;
+    border-radius: 7px;
+    border-left: none !important;
+}
+.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+    .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+        .MultiCarousel .MultiCarousel-inner .item { float: left;}
+        .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
+    .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+    .MultiCarousel .leftLst { left:0; }
+    .MultiCarousel .rightLst { right:0; }
+    
+        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+#basic-addon1{
+    border-right: none !important;
+}
+#ig{
+    width: 60% !important;
+}
+.form-floating,.form-floating .form-control{
+    /* border: 1px solid black; */
+    height: 45px !important;
+    font-size: 13px;
+}
+.form-control:focus, .btn:focus{
+    outline: none !important;
+    border-color: #BA68C8 !important;
+    box-shadow: 0 0 0px #BA68C8 !important;
+}
+label, ::placeholder{
+    font-size: 11px;
+    margin-bottom: 30px !important;
+    color: #BA68C8;
+}
+.btn{
+    background-color: #BA68C8 !important;
+    color: white !important;
+    font-size: 13px !important;
+}
+.led{
+    color: #d0cbcb;
+}
+.leds, .fs-5{
+    font-size: 12px !important;
+}
+.image{
+    width: 15%;
+    margin-left: 250px;
+}
+a{
+    text-decoration: none !important;
+    color: rgb(139, 138, 139) !important;
+    margin-left: 13px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.face{
+    color: #385185;
+}
+.text-primary{
+    cursor: pointer;
+    font-size: 13px;
+}
+#user{
+    height: 26px !important;
+    margin-top: 4.5px;
+}
+#card{
+    border-radius: 10px !important;
+}
+@media (max-width: 700px) {
+    nav{
+        display: none !important;
+    }
+    select{
+        width: 100% !important;
+    }
+    #pro{
+        display: none;
+    }
+    .card{
+        width: 90.5% !important;
+    }
+    .image{
+        width: 35%;
+        margin-left: 25px !important;
+    }
+    .log{
+        width: 100% !important;
+    }
+    a{
+        text-decoration: none !important;
+        color: rgb(139, 138, 139) !important;
+        margin-left: 10px;
+        font-size: 10px;
+        cursor: pointer;
+    }
+    p, .leds{
+        font-size: 10px !important;
+    }
+}

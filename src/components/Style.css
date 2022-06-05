@@ -10,18 +10,6 @@ li .fa-house, .fa-facebook-messenger, .fa-square-plus, .fa-compass, .fa-gratipay
     border-radius: 7px;
     border-left: none !important;
 }
-.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
-    .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
-        .MultiCarousel .MultiCarousel-inner .item { float: left;}
-        .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
-    .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
-    .MultiCarousel .leftLst { left:0; }
-    .MultiCarousel .rightLst { right:0; }
-    
-        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
-#basic-addon1{
-    border-right: none !important;
-}
 #ig{
     width: 60% !important;
 }
@@ -72,9 +60,31 @@ a{
 #user{
     height: 26px !important;
     margin-top: 4.5px;
+    cursor: pointer;
+}
+#users{
+    height: 70px !important;
+    cursor: pointer;
+}
+.fs{
+    font-size: 10px;
+}
+.follow{
+    font-size: 12px !important;
+    cursor: pointer;
+}
+#folowerpic{
+    height: 30px !important;
+    cursor: pointer;
+    margin-top: 7px;
+}
+#userField{
+    height: 40px !important;
+    cursor: pointer;
 }
 #card{
     border-radius: 10px !important;
+    width: 80% !important;
 }
 @media (max-width: 700px) {
     nav{

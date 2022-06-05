@@ -20,11 +20,11 @@ function Navbar() {
             {/* <div className='navbar-nav m-auto'>
             </div> */}
             <ul className="navbar-nav ms-auto">
-              <li className='nav-item'><Link to="/" className='nav-link text-white'><i class="fa-solid fa-house text-dark"></i></Link></li>
-              <li className='nav-item'><Link to="/signup" className='nav-link text-white'><i class="fa-brands fa-facebook-messenger text-dark"></i></Link></li>
-              <li className='nav-item'><Link to="/products" className='nav-link text-white'><i class="fa-solid fa-square-plus text-dark"></i></Link></li>
-              <li className='nav-item'><Link to="/products" className='nav-link text-white'><i class="fa-solid fa-compass text-dark"></i></Link></li>
-              <li className='nav-item'><Link to="/products" className='nav-link text-white'><i class="fa-brands fa-gratipay text-dark"></i></Link></li>
+              <li className='nav-item'><Link to="" className='nav-link text-white'><i class="fa-solid fa-house text-dark"></i></Link></li>
+              <li className='nav-item'><Link to="" className='nav-link text-white'><i class="fa-brands fa-facebook-messenger text-dark"></i></Link></li>
+              <li className='nav-item'><Link to="" className='nav-link text-white'><i class="fa-solid fa-square-plus text-dark"></i></Link></li>
+              <li className='nav-item'><Link to="" className='nav-link text-white'><i class="fa-solid fa-compass text-dark"></i></Link></li>
+              <li className='nav-item'><Link to="" className='nav-link text-white'><i class="fa-brands fa-gratipay text-dark"></i></Link></li>
               <img src={user} alt="" id='user' />
             </ul>
           </div>

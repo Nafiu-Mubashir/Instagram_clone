@@ -1,119 +1,234 @@
-nav{
-    align-items: center !important;
+nav {
+  align-items: center !important;
 }
-li .fa-house, .fa-facebook-messenger, .fa-square-plus, .fa-compass, .fa-gratipay{
-    font-size: 20px !important;
+
+.mobileNav {
+  display: none !important;
 }
-#navInp{
-    height: 35px;
-    width: 40%;
-    border-radius: 7px;
-    border-left: none !important;
+
+li .fa-house,
+.fa-facebook-messenger,
+.fa-square-plus,
+.fa-compass,
+.fa-gratipay {
+  font-size: 20px !important;
 }
-#ig{
-    width: 60% !important;
+
+#navInp {
+  height: 35px;
+  width: 40%;
+  border-radius: 7px;
+  border-left: none !important;
 }
-.form-floating,.form-floating .form-control{
-    /* border: 1px solid black; */
-    height: 45px !important;
-    font-size: 13px;
+
+#ig {
+  width: 60% !important;
 }
-.form-control:focus, .btn:focus{
-    outline: none !important;
-    border-color: #BA68C8 !important;
-    box-shadow: 0 0 0px #BA68C8 !important;
+
+.form-floating,
+.form-floating .form-control {
+  /* border: 1px solid black; */
+  height: 45px !important;
+  font-size: 13px;
 }
-label, ::placeholder{
-    font-size: 11px;
-    margin-bottom: 30px !important;
-    color: #BA68C8;
+
+.form-control:focus,
+.btn:focus {
+  outline: none !important;
+  border-color: #ba68c8 !important;
+  box-shadow: 0 0 0px #ba68c8 !important;
 }
-.btn{
-    background-color: #BA68C8 !important;
-    color: white !important;
-    font-size: 13px !important;
+
+label,
+::placeholder {
+  font-size: 11px;
+  margin-bottom: 30px !important;
+  color: #ba68c8;
 }
-.led{
-    color: #d0cbcb;
+
+.btn {
+  background-color: #ba68c8 !important;
+  color: white !important;
+  font-size: 13px !important;
 }
-.leds, .fs-5{
-    font-size: 12px !important;
+
+.led {
+  color: #d0cbcb;
 }
-.image{
-    width: 15%;
-    margin-left: 250px;
+
+.leds,
+.fs-5 {
+  font-size: 12px !important;
 }
-a{
+
+.image {
+  width: 15%;
+  margin-left: 250px;
+}
+
+a {
+  text-decoration: none !important;
+  color: rgb(139, 138, 139) !important;
+  margin-left: 13px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.face {
+  color: #385185;
+}
+
+.text-primary {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.user {
+  height: 26px !important;
+  margin-top: 4.5px;
+  cursor: pointer;
+}
+
+#users {
+  height: 70px !important;
+  cursor: pointer;
+}
+
+.fs {
+  font-size: 10px;
+}
+
+.follow {
+  font-size: 12px !important;
+  cursor: pointer;
+}
+
+#folowerpic {
+  height: 30px !important;
+  cursor: pointer;
+  margin-top: 7px;
+}
+
+#userField {
+  height: 40px !important;
+  cursor: pointer;
+}
+
+#card {
+  border-radius: 10px !important;
+  width: 80% !important;
+}
+
+/* .statusCard {
+    duration: 3000;
+    slidesToShow: 6;
+    slidesToScroll: 2;
+    autoplay: false;
+    indicators: false;
+} */
+
+.status {
+  text-align: center;
+  background: teal;
+  /*padding: '30px 0'; */
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  font-size: 30px;
+}
+
+@media (max-width: 700px) {
+  .deskNav {
+    display: none !important;
+  }
+
+  select {
+    width: 100% !important;
+  }
+
+  #pro {
+    display: none;
+  }
+
+  .card {
+    width: 90.5% !important;
+  }
+
+  .image {
+    width: 35%;
+    margin-left: 25px !important;
+  }
+
+  .log {
+    width: 100% !important;
+  }
+
+  a {
     text-decoration: none !important;
     color: rgb(139, 138, 139) !important;
-    margin-left: 13px;
-    font-size: 13px;
-    cursor: pointer;
-}
-.face{
-    color: #385185;
-}
-.text-primary{
-    cursor: pointer;
-    font-size: 13px;
-}
-#user{
-    height: 26px !important;
-    margin-top: 4.5px;
-    cursor: pointer;
-}
-#users{
-    height: 70px !important;
-    cursor: pointer;
-}
-.fs{
+    margin-left: 10px;
     font-size: 10px;
-}
-.follow{
-    font-size: 12px !important;
     cursor: pointer;
-}
-#folowerpic{
-    height: 30px !important;
+  }
+
+  .status {
+    margin-left: 0px !important;
+    width: 100% !important;
+  }
+
+  .mobileNav {
+    align-items: center !important;
+    display: block !important;
+  }
+
+  p,
+  .leds {
+    font-size: 10px !important;
+  }
+
+  .nav-brand {
+    width: 20%;
+  }
+
+  #ig {
+    width: 100% !important;
+  }
+
+  li {
+    width: 30px;
+  }
+
+  li .fa-house,
+  .fa-facebook-messenger,
+  .fa-square-plus,
+  .fa-compass,
+  .fa-gratipay {
+    margin-right: px !important;
+    font-size: 14px !important;
+  }
+
+  .user {
+    height: 18px !important;
+    margin-top: 4px;
     cursor: pointer;
-    margin-top: 7px;
-}
-#userField{
-    height: 40px !important;
-    cursor: pointer;
-}
-#card{
-    border-radius: 10px !important;
-    width: 80% !important;
-}
-@media (max-width: 700px) {
-    nav{
-        display: none !important;
-    }
-    select{
-        width: 100% !important;
-    }
-    #pro{
-        display: none;
-    }
-    .card{
-        width: 90.5% !important;
-    }
-    .image{
-        width: 35%;
-        margin-left: 25px !important;
-    }
-    .log{
-        width: 100% !important;
-    }
-    a{
-        text-decoration: none !important;
-        color: rgb(139, 138, 139) !important;
-        margin-left: 10px;
-        font-size: 10px;
-        cursor: pointer;
-    }
-    p, .leds{
-        font-size: 10px !important;
-    }
+    margin-left: 13px;
+  }
+
+  #pro {
+    display: none !important;
+  }
+
+  #card {
+    width: 100% !important;
+    margin-left: 0px !important;
+  }
+  .status {
+    text-align: center;
+    background: teal;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 30px;
+    /* margin-left: 10px !important; */
+  }
 }

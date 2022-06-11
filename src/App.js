@@ -5,6 +5,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import SignIn from './components/SignIn';
 import SingUp from './components/SingUp';
 import Usersfield from './components/Usersfield';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/signin" element={<Navigate to="/"/>}/>
         <Route path="/signup" element={<SingUp />}/>
         <Route path="/userfield" element={<Usersfield />} />
-        {/* <Route path="/products/*" element={<Product/>}/> */}
+        <Route path="/profile" element={<Profile />}/>
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
       {/* <SignIn /> */}

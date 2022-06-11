@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable no-undef */
+import React, { useState } from 'react'
 import "../components/Style.css"
 import iglogo from "../assests/iglogo.png"
 import { Link } from 'react-router-dom'
@@ -9,11 +10,21 @@ import {useNavigate} from 'react-router-dom'
 
 function SignIn() {
     const navigate = useNavigate();
+    const [email, setemail] = useState("");
+    const [password, setpassword] = useState("")
+    const getUser = JSON.parse(localStorage.getItem("InstagramUsers"));
     const toSignUp = () =>{
         navigate("/signUp")
     }
     const signIn = () => {
-        navigate("/userfield")
+        let userLog = getUser.find((val, _) => (val.userEmail == email && val.pass == password));
+        if (userLog) {
+           console.log(email, password);
+           console.log(userLog);    
+       }
+    //    navigate("/userprofile");
+        // console.log(getUser);
+        navigate("/profile");
     }
     return (
         <>
@@ -24,11 +35,11 @@ function SignIn() {
                             <img src={iglogo} alt="" className='d-block m-auto mb-3' />
                         </div>
                         <div class="form-floating mb-2">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="Phone Number, Username or Email" />
+                            <input type="email" class="form-control" id="floatingInput" placeholder="Phone Number, Username or Email" onChange={(e) => setemail(e.target.value)} value={email}/>
                             <label for="floatingInput">Phone Number, Username or Email</label>
                         </div>
                         <div class="form-floating  mb-2">
-                            <input type="text" class="form-control" id="floatingPassword" placeholder="Full Name" />
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Full Name" onChange={(e) => setpassword(e.target.value)} value={password}/>
                             <label for="floatingPassword">Password</label>
                         </div>
                         <button className='btn w-100' onClick={signIn}>Login</button>
@@ -42,7 +53,7 @@ function SignIn() {
             <div className='col-md col-lg-3 m-auto mt-lg-3'>
                 <div className="card shadow m-auto">
                     <div className="card-body">
-                        <p className='text-center mt-3'>Have an account? <span className='text-primary' onClick={toSignUp}>Log in</span></p>
+                        <p className='text-center mt-3'>Have an account? <span className='text-primary' onClick={toSignUp}>Sign Up</span></p>
                     </div>
                 </div>
             </div>

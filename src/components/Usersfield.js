@@ -8,9 +8,9 @@ function Usersfield() {
     return (
         <>
             <Navbar />
-            <section className='container w-lg-75 w-md-100'>
+            <section className='container'>
                 <div className="row">
-                    <div className="col-lg-7 col-md-12 ms-5">
+                    <div className="col-lg-7 col-md-12">
                         <UserScroll />
                         <Newsfield />
                     </div>

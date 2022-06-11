@@ -4,7 +4,7 @@ import user from "../assests/user-removebg-preview.png"
 function Newsfield() {
     return (
         <>
-            <div className="card mt-4 ms-auto" id='card'>
+            <div className="card mt-4 m-auto" id='card'>
                 <div className="card-body">
                     <div className='d-flex justify-content-between'>
                         <div className="d-flex">

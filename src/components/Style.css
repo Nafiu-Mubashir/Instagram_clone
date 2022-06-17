@@ -22,12 +22,11 @@ li .fa-house,
 }
 
 #ig {
-  width: 60% !important;
+  width: 20% !important;
 }
 
 .form-floating,
 .form-floating .form-control {
-  /* border: 1px solid black; */
   height: 45px !important;
   font-size: 13px;
 }
@@ -119,14 +118,6 @@ a {
   width: 80% !important;
 }
 
-/* .statusCard {
-    duration: 3000;
-    slidesToShow: 6;
-    slidesToScroll: 2;
-    autoplay: false;
-    indicators: false;
-} */
-
 .status {
   text-align: center;
   background: teal;
@@ -136,8 +127,19 @@ a {
   border-radius: 50px;
   font-size: 30px;
 }
+.text-danger{
+  width: 40%;
+}
+/* .modal{
+  margin-top: 200px;
+} */
+#coffe{
+  height: 180px;
+  width: 180px;
+  border-radius: 100%;
+}
 
-@media (max-width: 700px) {
+@media (max-width: 678px) {
   .deskNav {
     display: none !important;
   }
@@ -169,6 +171,34 @@ a {
     margin-left: 10px;
     font-size: 10px;
     cursor: pointer;
+  }#exTab1 .tab-content {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
+  }
+  
+  #exTab2 h3 {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
+  }
+  
+  /* remove border radius for the tab */
+  
+  #exTab1 .nav-pills > li > a {
+    border-radius: 0;
+  }
+  
+  /* change border radius for the tab , apply corners on top*/
+  
+  #exTab3 .nav-pills > li > a {
+    border-radius: 4px 4px 0 0 ;
+  }
+  
+  #exTab3 .tab-content {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
   }
 
   .status {
@@ -229,6 +259,71 @@ a {
     height: 70px;
     border-radius: 50%;
     font-size: 30px;
-    /* margin-left: 10px !important; */
+  }
+  #coffe{
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
   }
 }
+  /* body{margin-top:20px;}
+  .timeline-steps {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap
+  }
+  
+  .timeline-steps .timeline-step {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin: 1rem
+  }
+  
+  @media (min-width:768px) {
+      .timeline-steps .timeline-step:not(:last-child):after {
+          content: "";
+          display: block;
+          border-top: .25rem dotted #3b82f6;
+          width: 3.46rem;
+          position: absolute;
+          left: 7.5rem;
+          top: .3125rem
+      }
+      .timeline-steps .timeline-step:not(:first-child):before {
+          content: "";
+          display: block;
+          border-top: .25rem dotted #3b82f6;
+          width: 3.8125rem;
+          position: absolute;
+          right: 7.5rem;
+          top: .3125rem
+      }
+  }
+  
+  .timeline-steps .timeline-content {
+      width: 10rem;
+      text-align: center
+  }
+  
+  .timeline-steps .timeline-content .inner-circle {
+      border-radius: 1.5rem;
+      height: 1rem;
+      width: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #3b82f6
+  }
+  
+  .timeline-steps .timeline-content .inner-circle:before {
+      content: "";
+      background-color: #3b82f6;
+      display: inline-block;
+      height: 3rem;
+      width: 3rem;
+      min-width: 3rem;
+      border-radius: 6.25rem;
+      opacity: .5
+  } */

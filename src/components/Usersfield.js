@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import UserScroll from './UserScroll';
 import Newsfield from './Newsfield';
 import Userprofile from './Userprofile';
+import Users from './Users';
 function Usersfield() {
 
     return (
@@ -16,6 +17,7 @@ function Usersfield() {
                     </div>
                     <div className="col-4" id='pro'>
                         <Userprofile />
+                         <Users />
                     </div>
                 </div>
             </section>

@@ -39,6 +39,7 @@ function SingUp() {
         },
         onSubmit: (values) => {
             setusers(() => {
+               if(ALL_USERS){
                 if (ALL_USERS.find((val, _) => val.email == formik.values.email || val.username == formik.values.username)) {
                     alert("Either the username or email already exist");
                     return;
@@ -48,6 +49,10 @@ function SingUp() {
                     localStorage.InstagramUsers = JSON.stringify(InstUsers);
                     return InstUsers;
                 }
+               }
+               else{
+                localStorage.InstagramUsers = JSON.stringify([values]);
+               }
             })
             navigate("/signup");
         },

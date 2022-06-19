@@ -42,14 +42,24 @@ function UserScroll() {
                 <div className='card-body'>
                     <div>
                         <Slide {...properties} className='statusCard'>
+                        <img src={user} alt="" className='rounded-circle statu' style={{width: "100px",}} />
+                        <img src={user} alt="" className='rounded-circle statu' style={{width: "100px",}} />
+                        <img src={user} alt="" className='rounded-circle statu' style={{width: "100px",}} />
+                        <img src={user} alt="" className='rounded-circle statu' style={{width: "100px",}} />
+                        <img src={user} alt="" className='rounded-circle statu' style={{width: "100px",}} />
+                        <img src={user} alt="" className='rounded-circle statu' style={{width: "100px",}} />
+                        <img src={user} alt="" className='rounded-circle statu' style={{width: "100px",}} />
+                        <img src={user} alt="" className='rounded-circle statu' style={{width: "100px",}} />
+                        <img src={user} alt="" className='rounded-circle statu' style={{width: "100px",}} />
+
+                            {/* <div className='status'><img src={user} alt="" id='folowerpic' /></div>
                             <div className='status'><img src={user} alt="" id='folowerpic' /></div>
                             <div className='status'><img src={user} alt="" id='folowerpic' /></div>
                             <div className='status'><img src={user} alt="" id='folowerpic' /></div>
                             <div className='status'><img src={user} alt="" id='folowerpic' /></div>
                             <div className='status'><img src={user} alt="" id='folowerpic' /></div>
                             <div className='status'><img src={user} alt="" id='folowerpic' /></div>
-                            <div className='status'><img src={user} alt="" id='folowerpic' /></div>
-                            <div className='status'><img src={user} alt="" id='folowerpic' /></div>
+                            <div className='status'><img src={user} alt="" id='folowerpic' /></div> */}
                         </Slide>
                     </div>
                 </div>

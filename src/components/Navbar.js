@@ -6,16 +6,17 @@ import { useState } from 'react';
 
 function Navbar() {
   const GETUSER = JSON.parse(localStorage.getItem("InstagramUsers"));
+  const CurrentUser = JSON.parse(localStorage.getItem("CurrentUser"));
   let u;
   let a = [];
       GETUSER.map(item => {
-      console.log(item);
+      // console.log(item);
       u = item.username;
       a.push(u)
     })
-    console.log(a);
+    // console.log(a);
     // console.log(u);
-  console.log(GETUSER);
+  // console.log(GETUSER);
   const [searchUser, setsearchUser] = useState('');
   return (
     <>
@@ -64,7 +65,7 @@ function Navbar() {
               <li className='nav-item'><Link to="" className='nav-link text-white'><i className="fa-solid fa-compass text-dark"></i></Link></li>
               <li className='nav-item'><Link to="" className='nav-link text-white'><i className="fa-brands fa-gratipay text-dark"></i></Link></li>
               <div className="dropdown">
-                <img src={user} alt="" className="dropdown-toggle user" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" />
+                <img src={CurrentUser.profilePics} alt="" className="dropdown-toggle rounded-circle user ms-3 border" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style={{width: "25px", height: "25px" }}  />
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li className='dropdown-item'><Link to="/profile" className=' text-dark'><i className="fa-solid fa-circle-user text-dark"></i> Profile</Link></li>
                   <li className='dropdown-item'><Link to="" className=' text-dark'><i className="fa-solid fa-bookmark text-dark"></i> Saved</Link></li>

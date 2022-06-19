@@ -14,8 +14,9 @@ import {
 } from 'mdb-react-ui-kit';
 function Profile() {
   const GETUSER = JSON.parse(localStorage.getItem("CurrentUser"));
-  console.log(GETUSER.followers.length)
+  // console.log(GETUSER.followers.length)
   const [fillActive, setFillActive] = useState('tab1');
+  const userInfo = JSON.parse(localStorage.getItem('InstagramUsers'));
 
   const handleFillClick = (value) => {
     if (value === fillActive) {
@@ -24,6 +25,23 @@ function Profile() {
 
     setFillActive(value);
   };
+  const handleProfilePicture = (e) => {
+    let picture = e.target.files[0];
+    console.log('sco');
+    // set picture as base64 image and upload as url
+    let reader = new FileReader();
+    reader.readAsDataURL(picture);
+    reader.onloadend =()=> {
+
+      let user = userInfo.find(info => info.email == GETUSER.email);
+      // console.log(GETUSER)
+      if (user) {
+        let updateUser = {...user, profilePics: reader.result};
+        localStorage.setItem('CurrentUser', JSON.stringify(updateUser));
+        console.log(updateUser)
+      }
+    }
+  }
   return (
     <>
       <Navbar />
@@ -31,14 +49,18 @@ function Profile() {
         <div className='container mt-4 p-3'>
           <div className='w-75 m-auto'>
             <div className='row'>
+              {/* <img src={coffe} className="rounded-circle" alt="" style={{width: "100px", height: "100px" }}/> */}
               <div className='col-lg-3 col-md-6'>
-                <img src={coffe} alt="" id='coffe' className='' />
+              <label>
+                  <input type="file" hidden="hidden" onChange={handleProfilePicture}/>
+                  <img src={GETUSER.profilePics} className="rounded-circle border p-1" alt="" style={{width: "150px", height: "150px" }}/>
+                </label>
               </div>
               <div className='col-lg-9 col-md-6'>
                 <div className='d-flex'>
                   <h4 className=''>{GETUSER.username}</h4>
                   <button className='btn ms-5'>Edit profie</button>
-                  <i class="fa-solid fa-gear fs-1 text-dark ms-4"></i>
+                  <i className="fa-solid fa-gear fs-1 text-dark ms-4"></i>
                 </div>
                 <div className='d-flex mt-3'>
                   <p className=''>user posts</p>
@@ -51,7 +73,7 @@ function Profile() {
                 </div>
               </div>
               <div className='col-lg-3 col-md-6 mt-4'>
-                <img src={coffe} alt="" id='coffe' className='rounded-circle img-fluid' style={{width:"100px",height:"100px"}} />
+                <img src={coffe} alt="" id='coffe' className='rounded-circle img-fluid  border' style={{width: "70px", height: "70px" }} />
                 <p>Highlights</p>
               </div>
             </div>
@@ -87,50 +109,50 @@ function Profile() {
 
 
 
-      {/* <div class="container">                      
-    <div class="row text-center justify-content-center mb-5">
-        <div class="col-xl-6 col-lg-8">
-            <h2 class="font-weight-bold">A Company Evolution</h2>
-            <p class="text-muted">We’re very proud of the path we’ve taken. Explore the history that made us the company we are today.</p>
+      {/* <div className="container">                      
+    <div className="row text-center justify-content-center mb-5">
+        <div className="col-xl-6 col-lg-8">
+            <h2 className="font-weight-bold">A Company Evolution</h2>
+            <p className="text-muted">We’re very proud of the path we’ve taken. Explore the history that made us the company we are today.</p>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col">
-            <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2003</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
+    <div className="row">
+        <div className="col">
+            <div className="timeline-steps aos-init aos-animate" data-aos="fade-up">
+                <div className="timeline-step">
+                    <div className="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
+                        <div className="inner-circle"></div>
+                        <p className="h6 mt-3 mb-1">2003</p>
+                        <p className="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
                     </div>
                 </div>
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2004</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
+                <div className="timeline-step">
+                    <div className="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
+                        <div className="inner-circle"></div>
+                        <p className="h6 mt-3 mb-1">2004</p>
+                        <p className="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
                     </div>
                 </div>
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2005</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
+                <div className="timeline-step">
+                    <div className="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
+                        <div className="inner-circle"></div>
+                        <p className="h6 mt-3 mb-1">2005</p>
+                        <p className="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
                     </div>
                 </div>
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2010</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
+                <div className="timeline-step">
+                    <div className="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
+                        <div className="inner-circle"></div>
+                        <p className="h6 mt-3 mb-1">2010</p>
+                        <p className="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
                     </div>
                 </div>
-                <div class="timeline-step mb-0">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2020</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
+                <div className="timeline-step mb-0">
+                    <div className="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
+                        <div className="inner-circle"></div>
+                        <p className="h6 mt-3 mb-1">2020</p>
+                        <p className="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
                     </div>
                 </div>
             </div>

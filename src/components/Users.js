@@ -7,10 +7,14 @@ function Users() {
     // console.log(GETUSER);
     // var newArr = window.localStorage.getItem('InstagramUsers');
     // console.log(newArr);
+    const follow = (index) => {
+        console.log(index);
+    }
     return (
         <>
-            {allUsers.map((user) => (
-                <div className="d-flex justify-content-between">
+            {allUsers.map((user, index) => (
+                <div className="d-flex justify-content-between" key={index}>
+                    {/* {index} */}
                     <div className="d-flex">
                         <img src={users} alt="" id='folowerpic' />
                         <div>
@@ -18,7 +22,7 @@ function Users() {
                             <p className=''></p>
                         </div>
                     </div>
-                    <p className='text-primary mt-3 fw-bold follow'>Follow</p>
+                    <p className='text-primary mt-3 fw-bold follow' onClick={() => follow(index)}>Follow</p>
                 </div>
             ))}
 

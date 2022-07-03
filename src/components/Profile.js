@@ -18,9 +18,12 @@ function Profile() {
   const [fillActive, setFillActive] = useState('tab1');
   const userInfo = JSON.parse(localStorage.getItem('InstagramUsers'));
   const getPost = JSON.parse(localStorage.getItem("UsersPosts"));
-  // console.log(GETUSER.username);
-  let findPost = getPost.find((val) => val.username == GETUSER.username);
-  console.log(findPost);
+  const [posts, setposts] = useState({})
+  if (getPost) {
+    let findPost = getPost.find((val) => val.username == GETUSER.username);
+    setposts(findPost)
+    console.log(findPost);
+  }
   const handleFillClick = (value) => {
     if (value === fillActive) {
       return;
@@ -109,14 +112,15 @@ function Profile() {
 
               <MDBTabsContent>
                 <MDBTabsPane show={fillActive === 'tab1'}>
-                  {
+                  {getPost ?
                     <div className='d-flex'>
                       <div className="card w-50">
                         <div className="card-body">
-                          <img src={findPost.image} alt="" style={{height:"70vh", width:"100%"}}/>
+                          <img src={posts.image} alt="" style={{height:"70vh", width:"100%"}}/>
                         </div>
                       </div>
                     </div>
+                    : <h5>My Posts</h5>
                  }
                 </MDBTabsPane>
                 <MDBTabsPane show={fillActive === 'tab2'}>Tab 2 content</MDBTabsPane>

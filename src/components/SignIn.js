@@ -26,10 +26,10 @@ function SignIn() {
             console.log(values);
             let userLog = getUser.find((val, _) => (val.email == formik.values.email && val.password == formik.values.password));
             if (userLog) {
-                console.log(values.email, values.password);
+                // console.log(values.email, values.password);
                 localStorage.setItem("CurrentUser", JSON.stringify(userLog));
-                console.log(getUser);
-                console.log(userLog);
+                // console.log(getUser);
+                // console.log(userLog);
                 navigate("/profile");
             }
             else{

@@ -14,10 +14,13 @@ import {
 } from 'mdb-react-ui-kit';
 function Profile() {
   const GETUSER = JSON.parse(localStorage.getItem("CurrentUser"));
-  // console.log(GETUSER.followers.length)
+  // console.log(GETUSER.following.length)
   const [fillActive, setFillActive] = useState('tab1');
   const userInfo = JSON.parse(localStorage.getItem('InstagramUsers'));
-
+  const getPost = JSON.parse(localStorage.getItem("UsersPosts"));
+  // console.log(GETUSER.username);
+  let findPost = getPost.find((val) => val.username == GETUSER.username);
+  console.log(findPost);
   const handleFillClick = (value) => {
     if (value === fillActive) {
       return;
@@ -27,18 +30,26 @@ function Profile() {
   };
   const handleProfilePicture = (e) => {
     let picture = e.target.files[0];
-    console.log('sco');
-    // set picture as base64 image and upload as url
     let reader = new FileReader();
     reader.readAsDataURL(picture);
     reader.onloadend =()=> {
-
+      
+      console.log(reader.result);
       let user = userInfo.find(info => info.email == GETUSER.email);
-      // console.log(GETUSER)
+      // console.log(user)
       if (user) {
         let updateUser = {...user, profilePics: reader.result};
+        // let used = {...user, profilepics: reader.result};
         localStorage.setItem('CurrentUser', JSON.stringify(updateUser));
-        console.log(updateUser)
+        // console.log(updateUser)
+        // console.log(used);
+        // console.log(updateUser.profilePics);
+        for (let i = 0; i < userInfo.length; i++) {
+          if (userInfo[i].email === updateUser.email) {
+            userInfo[i] = updateUser;
+            localStorage.setItem("InstagramUsers", JSON.stringify(userInfo));
+          }
+        }
       }
     }
   }
@@ -53,7 +64,7 @@ function Profile() {
               <div className='col-lg-3 col-md-6'>
               <label>
                   <input type="file" hidden="hidden" onChange={handleProfilePicture}/>
-                  <img src={GETUSER.profilePics} className="rounded-circle border p-1" alt="" style={{width: "150px", height: "150px" }}/>
+                  <img src={GETUSER.profilePics} className="rounded-circle border p-1" alt="" style={{width: "150px", height: "150px",cursor: "pointer" }}/>
                 </label>
               </div>
               <div className='col-lg-9 col-md-6'>
@@ -97,7 +108,17 @@ function Profile() {
               </MDBTabs>
 
               <MDBTabsContent>
-                <MDBTabsPane show={fillActive === 'tab1'}>Tab 1 content</MDBTabsPane>
+                <MDBTabsPane show={fillActive === 'tab1'}>
+                  {
+                    <div className='d-flex'>
+                      <div className="card w-50">
+                        <div className="card-body">
+                          <img src={findPost.image} alt="" style={{height:"70vh", width:"100%"}}/>
+                        </div>
+                      </div>
+                    </div>
+                 }
+                </MDBTabsPane>
                 <MDBTabsPane show={fillActive === 'tab2'}>Tab 2 content</MDBTabsPane>
                 <MDBTabsPane show={fillActive === 'tab3'}>Tab 3 content</MDBTabsPane>
               </MDBTabsContent>

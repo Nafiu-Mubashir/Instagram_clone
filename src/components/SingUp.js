@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import { useFormik } from "formik";
 import * as  yup from "yup";
 import Footer from './Footer';
+// import avarta from '../assets/users.png'
+import avarta from '../assests/user-removebg-preview.png'
 
 function SingUp() {
     const [users, setusers] = useState([]);
@@ -34,27 +36,27 @@ function SingUp() {
             password: "",
             followers: [],
             following: [],
-            profilePics: "",
+            profilePics: avarta,
             dateOfBirth: "",
         },
         onSubmit: (values) => {
-            setusers(() => {
-               if(ALL_USERS){
+            if (ALL_USERS) {
                 if (ALL_USERS.find((val, _) => val.email == formik.values.email || val.username == formik.values.username)) {
                     alert("Either the username or email already exist");
                     return;
                 }
                 else {
-                    let InstUsers = [...users, values];
+                    let InstUsers = [...ALL_USERS, values];
                     localStorage.InstagramUsers = JSON.stringify(InstUsers);
+                    navigate("/signin");
                     return InstUsers;
                 }
-               }
-               else{
+            }
+            else {
                 localStorage.InstagramUsers = JSON.stringify([values]);
-               }
-            })
-            navigate("/signup");
+            }
+                formik.resetForm();
+            // navigate("/");
         },
         validationSchema: yup.object({
             email: yup.string().required('This field is required'),

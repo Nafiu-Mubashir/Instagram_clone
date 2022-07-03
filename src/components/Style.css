@@ -130,6 +130,16 @@ a {
 .text-danger{
   width: 40%;
 }
+#comment{
+  height: 50px;
+  width: 80%;
+  border-color: #b7b0b0;
+  border-left: none;
+  border-right: none;
+}
+#comment:focus{
+  outline: none;
+}
 /* .fa-user-pen{
   color: white !important;
   margin-left: -15px;
